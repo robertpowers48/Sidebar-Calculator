@@ -16,7 +16,7 @@
       "38": "icons/38.png"
     },
     "default_panel": "sidebar.html",
-    "default_title": "__MSG_extName__"
+    "default_title": "Side Calculator"
   },
   "version": "0.1"
 }

@@ -1,11 +1,11 @@
 {
   "extName": {
-    "description": "Side Calculator",
+    "description": "Extension name.",
     "message": "Side Calculator"
   },
   "extDescription": {
     "description": "Description of extension functionality.",
-    "message": "Boilerplate for Opera sidebar extensions. This is the description."
+    "message": "Calculator on the new sidebar of Opera 29+"
   },
   "extPanelURL": {
     "description": "Extension URL.",
