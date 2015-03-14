@@ -83,3 +83,88 @@ for(var i = 0; i < keys.length; i++) {
 		e.preventDefault();
 	} 
 }
+
+document.onkeypress = function (e) {
+    e = e || window.event;
+    // use e.keyCode
+    console.log(e.keyCode);
+    if (e.keyCode == "49")
+    {
+    	document.getElementById('screen').innerHTML += "1";
+    }
+    else if (e.keyCode == "50")
+    {
+    	document.getElementById('screen').innerHTML += "2";
+    }
+    else if (e.keyCode == "51")
+    {
+    	document.getElementById('screen').innerHTML += "3";
+    }
+    else if (e.keyCode == "52")
+    {
+    	document.getElementById('screen').innerHTML += "4";
+    }
+    else if (e.keyCode == "53")
+    {
+    	document.getElementById('screen').innerHTML += "5";
+    }
+    else if (e.keyCode == "54")
+    {
+    	document.getElementById('screen').innerHTML += "6";
+    }
+    else if (e.keyCode == "55")
+    {
+    	document.getElementById('screen').innerHTML += "7";
+    }
+    else if (e.keyCode == "56")
+    {
+    	document.getElementById('screen').innerHTML += "8";
+    }
+    else if (e.keyCode == "57")
+    {
+    	document.getElementById('screen').innerHTML += "9";
+    }
+    else if (e.keyCode == "48")
+    {
+    	document.getElementById('screen').innerHTML += "0";
+    }
+    else if (e.keyCode == "43")
+    {
+    	var myscreen = document.getElementById('screen').innerHTML;
+    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/'))
+    	{
+    		document.getElementById('screen').innerHTML += "+";
+    	}
+    }
+    else if (e.keyCode == "45")
+    {
+    	document.getElementById('screen').innerHTML += "-";
+    }
+    else if (e.keyCode == "47")
+    {
+    	document.getElementById('screen').innerHTML += "/";
+    }
+    else if (e.keyCode == "42")
+    {
+    	document.getElementById('screen').innerHTML += "*";
+    }
+    else if (e.keyCode == "61" || "13")
+    {
+    	var input = document.querySelector('.screen');
+		var inputVal = input.innerHTML;
+		var equation = inputVal;
+		var lastChar = equation[equation.length - 1];
+			
+		// Replace all instances of x and ÷ with * and / respectively. This can be done easily using regex and the 'g' tag which will replace all instances of the matched character/substring
+		equation = equation.replace(/x/g, '*').replace(/÷/g, '/');
+			
+		// Final thing left to do is checking the last character of the equation. If it's an operator or a decimal, remove it
+		if(operators.indexOf(lastChar) > -1 || lastChar == '.')
+			equation = equation.replace(/.$/, '');
+			
+		if(equation)
+			input.innerHTML = eval(equation);
+				
+		decimalAdded = false;
+    }
+};
