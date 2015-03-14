@@ -84,10 +84,11 @@ for(var i = 0; i < keys.length; i++) {
 	} 
 }
 
+//Support for the keyboard
 document.onkeypress = function (e) {
     e = e || window.event;
-    // use e.keyCode
     console.log(e.keyCode);
+    //keyboard numbers support
     if (e.keyCode == "49")
     {
     	document.getElementById('screen').innerHTML += "1";
@@ -128,6 +129,7 @@ document.onkeypress = function (e) {
     {
     	document.getElementById('screen').innerHTML += "0";
     }
+    //Operators keyboard support
     else if (e.keyCode == "43")
     {
     	var myscreen = document.getElementById('screen').innerHTML;
@@ -139,15 +141,19 @@ document.onkeypress = function (e) {
     else if (e.keyCode == "45")
     {
     	document.getElementById('screen').innerHTML += "-";
+    	//todo
     }
     else if (e.keyCode == "47")
     {
     	document.getElementById('screen').innerHTML += "/";
+    	//todo
     }
     else if (e.keyCode == "42")
     {
     	document.getElementById('screen').innerHTML += "*";
+    	//todo
     }
+    //Enter and "="" keyboard support
     else if (e.keyCode == "61" || "13")
     {
     	var input = document.querySelector('.screen');
@@ -166,5 +172,10 @@ document.onkeypress = function (e) {
 			input.innerHTML = eval(equation);
 				
 		decimalAdded = false;
+    }
+    //Delete and backspace keyboard  support
+    else if(e.keyCode == "8" || "46")
+    {
+    	//to do
     }
 };
