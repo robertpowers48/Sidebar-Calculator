@@ -17,6 +17,12 @@ for(var i = 0; i < keys.length; i++) {
 			input.innerHTML = '';
 			decimalAdded = false;
 		}
+
+		//Remove "/" if screen is empty
+		else if((btnVal == '/') && (document.getElementById('screen').innerHTML == ''))
+		{
+			document.getElementById('screen').innerHTML = '';
+		}
 		
 		// If eval key is pressed, calculate and display the result
 		else if(btnVal == '=') {
@@ -95,7 +101,7 @@ document.onkeypress = function (e) {
     	document.getElementById('screen').innerHTML += e.keyCode - 48; 
     }
    
-    //Operators keyboard support
+    //Operators keyboard support and remove double operators
     else if (e.keyCode == "43")
     {
     	var myscreen = document.getElementById('screen').innerHTML;
@@ -106,19 +112,29 @@ document.onkeypress = function (e) {
     }
     else if (e.keyCode == "45")
     {
-    	document.getElementById('screen').innerHTML += "-";
-    	//todo
+    	var myscreen = document.getElementById('screen').innerHTML;
+    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/'))
+    	{
+    		document.getElementById('screen').innerHTML += "-";
+    	}
     }
     else if (e.keyCode == "47")
     {
-    	document.getElementById('screen').innerHTML += "/";
-    	//todo
+    	var myscreen = document.getElementById('screen').innerHTML;
+    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/'))
+    	{
+    		document.getElementById('screen').innerHTML += "/";
+    	}
     }
     else if (e.keyCode == "42")
     {
-    	document.getElementById('screen').innerHTML += "*";
-    	//todo
+    	var myscreen = document.getElementById('screen').innerHTML;
+    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/'))
+    	{
+    		document.getElementById('screen').innerHTML += "*";
+    	}
     }
+
     //Enter and "="" keyboard support
     else if (e.keyCode == "61" || "13")
     {
@@ -139,9 +155,18 @@ document.onkeypress = function (e) {
 				
 		decimalAdded = false;
     }
+};
+
+//Delete last number or operator of the screen when you press "backspace" or "delete"
+document.onkeyup = function (e) {
+    e = e || window.event;
+    console.log(e.keyCode);
+
     //Delete and backspace keyboard  support
-    else if(e.keyCode == "8" || "46")
+    if((e.keyCode == "8") || (e.keyCode == "46"))
     {
-    	//to do
+    	var myscreen = document.getElementById('screen').innerHTML;
+    	myscreen = myscreen.substring(0, myscreen.length - 1);
+    	document.getElementById('screen').innerHTML = myscreen;
     }
 };
