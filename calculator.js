@@ -88,47 +88,13 @@ for(var i = 0; i < keys.length; i++) {
 document.onkeypress = function (e) {
     e = e || window.event;
     console.log(e.keyCode);
+
     //keyboard numbers support
-    if (e.keyCode == "49")
+    if((e.keyCode <= "57") && (e.keyCode >= "48"))
     {
-    	document.getElementById('screen').innerHTML += "1";
+    	document.getElementById('screen').innerHTML += e.keyCode - 48; 
     }
-    else if (e.keyCode == "50")
-    {
-    	document.getElementById('screen').innerHTML += "2";
-    }
-    else if (e.keyCode == "51")
-    {
-    	document.getElementById('screen').innerHTML += "3";
-    }
-    else if (e.keyCode == "52")
-    {
-    	document.getElementById('screen').innerHTML += "4";
-    }
-    else if (e.keyCode == "53")
-    {
-    	document.getElementById('screen').innerHTML += "5";
-    }
-    else if (e.keyCode == "54")
-    {
-    	document.getElementById('screen').innerHTML += "6";
-    }
-    else if (e.keyCode == "55")
-    {
-    	document.getElementById('screen').innerHTML += "7";
-    }
-    else if (e.keyCode == "56")
-    {
-    	document.getElementById('screen').innerHTML += "8";
-    }
-    else if (e.keyCode == "57")
-    {
-    	document.getElementById('screen').innerHTML += "9";
-    }
-    else if (e.keyCode == "48")
-    {
-    	document.getElementById('screen').innerHTML += "0";
-    }
+   
     //Operators keyboard support
     else if (e.keyCode == "43")
     {
