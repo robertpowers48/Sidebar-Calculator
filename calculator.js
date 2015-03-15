@@ -96,7 +96,7 @@ document.onkeypress = function (e) {
     console.log(e.keyCode);
 
     //keyboard numbers support
-    if((e.keyCode <= "57") && (e.keyCode >= "48"))
+    if((e.keyCode <= '57') && (e.keyCode >= '48'))
     {
     	document.getElementById('screen').innerHTML += e.keyCode - 48; 
     }
@@ -105,7 +105,7 @@ document.onkeypress = function (e) {
     else if (e.keyCode == "43")
     {
     	var myscreen = document.getElementById('screen').innerHTML;
-    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/'))
+    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/') && (myscreen.charAt(myscreen.length-1)!= '.') && (myscreen.charAt(myscreen.length-1)!= ''))
     	{
     		document.getElementById('screen').innerHTML += "+";
     	}
@@ -113,7 +113,7 @@ document.onkeypress = function (e) {
     else if (e.keyCode == "45")
     {
     	var myscreen = document.getElementById('screen').innerHTML;
-    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/'))
+    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/') && (myscreen.charAt(myscreen.length-1)!= '.'))
     	{
     		document.getElementById('screen').innerHTML += "-";
     	}
@@ -121,7 +121,7 @@ document.onkeypress = function (e) {
     else if (e.keyCode == "47")
     {
     	var myscreen = document.getElementById('screen').innerHTML;
-    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/'))
+    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/') && (myscreen.charAt(myscreen.length-1)!= '.') && (myscreen.charAt(myscreen.length-1)!= ''))
     	{
     		document.getElementById('screen').innerHTML += "/";
     	}
@@ -129,14 +129,14 @@ document.onkeypress = function (e) {
     else if (e.keyCode == "42")
     {
     	var myscreen = document.getElementById('screen').innerHTML;
-    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/'))
+    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/') && (myscreen.charAt(myscreen.length-1)!= '.') && (myscreen.charAt(myscreen.length-1)!= ''))
     	{
     		document.getElementById('screen').innerHTML += "*";
     	}
     }
 
     //Enter and "="" keyboard support
-    else if (e.keyCode == "61" || "13")
+    else if ((e.keyCode == "61") || (e.keyCode == "13"))
     {
     	var input = document.querySelector('.screen');
 		var inputVal = input.innerHTML;
@@ -157,16 +157,32 @@ document.onkeypress = function (e) {
     }
 };
 
-//Delete last number or operator of the screen when you press "backspace" or "delete"
+//Delete and backspace support
 document.onkeyup = function (e) {
     e = e || window.event;
     console.log(e.keyCode);
 
-    //Delete and backspace keyboard  support
-    if((e.keyCode == "8") || (e.keyCode == "46"))
+    //Delete the last nuumber or operator when you press "backspace"
+    if(e.keyCode == "8")
     {
     	var myscreen = document.getElementById('screen').innerHTML;
     	myscreen = myscreen.substring(0, myscreen.length - 1);
     	document.getElementById('screen').innerHTML = myscreen;
     }
+
+    //Clear the screen when you press "delete"
+   	else if(e.keyCode == "46")
+   	{
+   		document.getElementById('screen').innerHTML = '';
+   	}
+
+   	//Point support on keyboard
+   	else if((e.keyCode == "190") || (e.keyCode == "110"))
+   	{
+   		var myscreen = document.getElementById('screen').innerHTML;
+    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/') && (myscreen.charAt(myscreen.length-1)!= '.') && (myscreen.charAt(myscreen.length-1)!= ''))
+    	{
+    		document.getElementById('screen').innerHTML += ".";
+    	}
+   	}
 };
