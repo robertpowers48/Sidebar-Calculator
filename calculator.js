@@ -47,8 +47,6 @@ for(var i = 0; i < keys.length; i++) {
 		// 2. The equation shouldn't start from an operator except minus
 		// 3. not more than 1 decimal should be there in a number
 		
-		// We'll fix these issues using some simple checks
-		
 		// indexOf works only in IE9+
 		else if(operators.indexOf(btnVal) > -1) {
 			// Operator is clicked
@@ -174,15 +172,17 @@ document.onkeyup = function (e) {
    	else if(e.keyCode == "46")
    	{
    		document.getElementById('screen').innerHTML = '';
+   		decimalAdded = false;
    	}
 
    	//Point support on keyboard
    	else if((e.keyCode == "190") || (e.keyCode == "110"))
    	{
    		var myscreen = document.getElementById('screen').innerHTML;
-    	if((myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/') && (myscreen.charAt(myscreen.length-1)!= '.') && (myscreen.charAt(myscreen.length-1)!= ''))
+    	if((!decimalAdded) && (myscreen.charAt(myscreen.length-1) != '+') && (myscreen.charAt(myscreen.length-1)!= '*') && (myscreen.charAt(myscreen.length-1)!= '-') && (myscreen.charAt(myscreen.length-1)!= '/') && (myscreen.charAt(myscreen.length-1)!= '.') && (myscreen.charAt(myscreen.length-1)!= ''))
     	{
     		document.getElementById('screen').innerHTML += ".";
+    		decimalAdded = true;
     	}
    	}
 };
