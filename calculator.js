@@ -73,7 +73,8 @@ for(var i = 0; i < keys.length; i++) {
 		}
 		
 		// if any other key is pressed, just append it
-		else {
+		else if (document.getElementById('screen').innerHTML.length <13) 
+		{
 			input.innerHTML += btnVal;
 		}
 		
@@ -88,7 +89,7 @@ document.onkeypress = function (e) {
     console.log(e.keyCode);
 
     //keyboard numbers support
-    if((e.keyCode <= '57') && (e.keyCode >= '48'))
+    if((e.keyCode <= '57') && (e.keyCode >= '48') && (document.getElementById('screen').innerHTML.length <13))
     {
     	document.getElementById('screen').innerHTML += e.keyCode - 48; 
     }
