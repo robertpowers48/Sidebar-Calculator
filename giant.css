@@ -151,3 +151,108 @@ html {
 	font-style: italic;
 	font-size: 12px;
 }
+
+/*Display style to select*/
+.colors
+{
+	display: block;
+	margin-left: 47.5px;
+	margin-right: 47.5px;
+	height: 35px;
+	width: 175px;
+	margin-bottom: 20px;
+}
+
+.color2, .color3, .color4
+{
+	width: 35px;
+	height: 35px;
+	float: left;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+}
+
+.color1
+{
+	width: 35px;
+	height: 35px;
+	background-color: #FA6900;
+	float: left;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+}
+
+.color2
+{
+	background-color: #69D2E7;
+}
+
+.color3
+{
+	background-color: #E0E4CC;
+}
+
+.color4
+{
+	background-color: #bdcf5e;
+}
+
+.color5
+{
+	width: 35px;
+	height: 35px;
+	background-color: #6900fa;
+	float: left;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.color7, .color8, .color9
+{
+	width: 35px;
+	height: 35px;
+	float: left;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+}
+
+.color6
+{
+	width: 35px;
+	height: 35px;
+	background-color: #9dd2ea;
+	float: left;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+}
+
+.color7
+{
+	background-color: #ff9fa8;
+}
+
+.color8
+{
+	background-color: #fff0f5;
+}
+
+.color9
+{
+	background-color: #f1ff92;
+}
+
+.color10
+{
+	width: 35px;
+	height: 35px;
+	background-color: #9c89f6;
+	float: left;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+}
