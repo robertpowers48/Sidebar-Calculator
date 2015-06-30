@@ -20,7 +20,7 @@ html {
 
 /* Using box shadows to create 3D effects */
 #calculator {
-	width: 270px;
+	width: 235px;
 	height: auto;
 	
 	margin: 100px auto;
@@ -40,7 +40,7 @@ html {
 /* Inset shadow on the screen to create indent */
 .top .screen {
 	height: 30px;
-	width: 150px;
+	width: 138px;
 	
 	float: right;
 	
@@ -70,7 +70,7 @@ html {
 	
 	cursor: pointer;
 	
-	width: 52px;
+	width: 43px;
 	height: 26px;
 	
 	background: white;
